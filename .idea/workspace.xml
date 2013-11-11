@@ -37,19 +37,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="establecimientos_controller.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="establecimientos_controller.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/establecimientos_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="112" column="44" selection-start="3106" selection-end="3106" vertical-scroll-proportion="0.0">
+            <state line="97" column="43" selection-start="2587" selection-end="2587" vertical-scroll-proportion="0.5534884">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="validation.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="validation.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/classes/validation.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="62" column="202" selection-start="1568" selection-end="1568" vertical-scroll-proportion="0.72772276">
+            <state line="62" column="202" selection-start="1568" selection-end="1568" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -83,8 +83,8 @@
         <option value="$PROJECT_DIR$/app/classes/operations.rb" />
         <option value="$PROJECT_DIR$/app/classes/operaciones.rb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/establecimientos_controller.rb" />
         <option value="$PROJECT_DIR$/app/classes/validation.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/establecimientos_controller.rb" />
       </list>
     </option>
   </component>
@@ -565,16 +565,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/establecimientos_controller.rb">
+    <entry file="file://$PROJECT_DIR$/app/classes/validation.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="112" column="44" selection-start="3106" selection-end="3106" vertical-scroll-proportion="0.0">
+        <state line="62" column="202" selection-start="1568" selection-end="1568" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/classes/validation.rb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/establecimientos_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="202" selection-start="1568" selection-end="1568" vertical-scroll-proportion="0.72772276">
+        <state line="97" column="43" selection-start="2587" selection-end="2587" vertical-scroll-proportion="0.5534884">
           <folding />
         </state>
       </provider>

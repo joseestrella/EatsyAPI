@@ -95,6 +95,7 @@ class EstablecimientosController < ApplicationController
     if(json == false)
       render json: {:eatsy_status => "error"}
     else
+      establecimiento = Establecimiento.new
       render json: json
     end
     #@establecimiento = Establecimiento.new(params[:establecimiento])
