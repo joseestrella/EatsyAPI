@@ -11,7 +11,7 @@
     <file path="/operations.rb" changelist="38e0af6d-2e4a-432e-9f5d-5de7efe84015" time="1384114986242" ignored="false" />
     <file path="$USER_HOME$/RubymineProjects/PruebasAPI/scryptPruebas.rb" changelist="38e0af6d-2e4a-432e-9f5d-5de7efe84015" time="1384120473224" ignored="false" />
     <file path="/scryptPruebas.rb" changelist="38e0af6d-2e4a-432e-9f5d-5de7efe84015" time="1384117084791" ignored="false" />
-    <file path="/validation.rb" changelist="38e0af6d-2e4a-432e-9f5d-5de7efe84015" time="1384135706100" ignored="false" />
+    <file path="/validation.rb" changelist="38e0af6d-2e4a-432e-9f5d-5de7efe84015" time="1384136448163" ignored="false" />
     <file path="$USER_HOME$/RubymineProjects/PruebasAPI/establecimiento.rb" changelist="38e0af6d-2e4a-432e-9f5d-5de7efe84015" time="1384117844299" ignored="false" />
     <file path="$USER_HOME$/RubymineProjects/PruebasAPI/scryptUnEstablecimiento" changelist="38e0af6d-2e4a-432e-9f5d-5de7efe84015" time="1384117964607" ignored="false" />
     <file path="$USER_HOME$/RubymineProjects/PruebasAPI/scryptActualizar" changelist="38e0af6d-2e4a-432e-9f5d-5de7efe84015" time="1384119219263" ignored="false" />
@@ -50,6 +50,7 @@
       <file leaf-file-name="validation.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/classes/validation.rb">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state line="62" column="106" selection-start="1472" selection-end="1472" vertical-scroll-proportion="0.0">
               <folding />
             </state>
@@ -60,6 +61,9 @@
         <entry file="file://$PROJECT_DIR$/hola.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state line="6" column="12" selection-start="34" selection-end="34" vertical-scroll-proportion="0.3148148">
+=======
+            <state line="62" column="202" selection-start="1568" selection-end="1568" vertical-scroll-proportion="0.72772276">
+>>>>>>> 230bfa15d2331034a3561b1e08f04e06e1d410b1
               <folding />
             </state>
           </provider>
@@ -631,6 +635,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/classes/validation.rb">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state line="62" column="106" selection-start="1472" selection-end="1472" vertical-scroll-proportion="0.0">
           <folding />
         </state>
@@ -639,6 +644,9 @@
     <entry file="file://$PROJECT_DIR$/hola.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="12" selection-start="34" selection-end="34" vertical-scroll-proportion="0.3148148">
+=======
+        <state line="62" column="202" selection-start="1568" selection-end="1568" vertical-scroll-proportion="0.72772276">
+>>>>>>> 230bfa15d2331034a3561b1e08f04e06e1d410b1
           <folding />
         </state>
       </provider>

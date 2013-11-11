@@ -60,7 +60,7 @@ class Validation
       return false
     end
     #json2['direccion']=json['direccion']
-    json2={"nombre" => json['nombre'],"descripcion" => json['descripcion'], "categoria" => json['categoria'], "latitud" => 31.858656, "longitud" => -116.614595, "direccion" => "Av Adolfo Lopez entre Guadalupe y Miguel Hidalgo"}
+    json2={"nombre" => json['nombre'],"descripcion" => json['descripcion'], "categoria" => json['categoria'], "latitud" => json['latitud'], "longitud" => json['longitud'], "direccion" => json['direccion']}
 
     return json2.to_json
   end
