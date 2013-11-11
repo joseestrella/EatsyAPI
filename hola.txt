@@ -1,3 +1,13 @@
+<<<<<<< HEAD
+hola :3
+
+
+probando cambios
+
+
+a ver
+=======
 hola :3
 
 Gay José Guillermo Cemé Canul
+>>>>>>> 230bfa15d2331034a3561b1e08f04e06e1d410b1
