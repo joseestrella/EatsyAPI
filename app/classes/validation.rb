@@ -21,7 +21,7 @@ class Validation
     if(defined?(json['keyword']) == nil)
       json['keyword']=""
     end
-    if(!json['categoria'].blank?)
+    if(defined?(json['categoria']) == nil)
       json['categoria']="ALL"
     end
     return json

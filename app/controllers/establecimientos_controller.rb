@@ -11,23 +11,19 @@ class EstablecimientosController < ApplicationController
   end
 
   def lista
-    #parametros = params
+
     json=Validation.validateLista params
     auxEst=[]
     if(json == false)
       render json: {:eatsy_status => "error"}
     else
-      #json=JSON.parse(parametros[:lista])
-
       establecimientos = Establecimiento.all
       establecimientos.each{|estab|
         dist=Operaciones.distancia(estab.latitud,estab.longitud,json['latitud'],json['longitud'])
-        #puts "Ahi va la distanciiiiia"
-        #puts dist
         if(dist<=json['radio'])
-          if(json['categoria'] != "ALL")
+          if(!json['categoria'].equal?("ALL"))
             if(json['keyword'] != nil)
-              if(estab.nombre.include?json['keyword'] && estab.categoria == json['categoria'])
+              if(estab.nombre.include?json['keyword'] && estab.categoria.equal?(json['categoria']))
                 auxEst<<estab
               end
             else
@@ -37,7 +33,6 @@ class EstablecimientosController < ApplicationController
             end
           else
             if(json['keyword'] != nil)
-              #puts "EEEEEEENTRRRRAAAAAA: "+json['keyword']
               if(estab.nombre.include?json['keyword'])
                 auxEst<<estab
               end
@@ -51,13 +46,7 @@ class EstablecimientosController < ApplicationController
       render json:{
           :Establecimientos => perro
       }, :status => 200
-      #render json: establecimientos
     end
-
-    #respond_to do |format|
-    #format.html # index.html.erb
-    #  format.json { render json: @establecimientos }
-    #end
   end
 
 
@@ -95,25 +84,15 @@ class EstablecimientosController < ApplicationController
     if(json == false)
       render json: {:eatsy_status => "error"}
     else
-      establecimiento = Establecimiento.new(json)
-      #respond_to do |format|
-      if @establecimiento.save
-        #format.html { redirect_to @establecimiento, notice: 'Establecimiento was successfully created.' }
-        format.json { render json: status: :created, location: @establecimiento }
+      puts json
+      data=JSON.parse(json)
+      establecimiento = Establecimiento.new(data)
+      if establecimiento.save
+        render json:{ :eatsy_status => "Guardado satisfactorio"}
       else
-        #format.html { render action: "new" }
-        format.json { render json: @establecimiento.errors, status: :unprocessable_entity }
-        #end
-        #puts json
+        format.json { render json: establecimiento.errors, status: :unprocessable_entity }
       end
-
-
-
-      #render json: json
     end
-    #@establecimiento = Establecimiento.new(params[:establecimiento])
-
-    #
   end
 
   # PUT /establecimientos/1
