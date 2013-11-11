@@ -95,21 +95,25 @@ class EstablecimientosController < ApplicationController
     if(json == false)
       render json: {:eatsy_status => "error"}
     else
-      establecimiento = Establecimiento.new
-      render json: json
+      establecimiento = Establecimiento.new(json)
+      #respond_to do |format|
+      if @establecimiento.save
+        #format.html { redirect_to @establecimiento, notice: 'Establecimiento was successfully created.' }
+        format.json { render json: status: :created, location: @establecimiento }
+      else
+        #format.html { render action: "new" }
+        format.json { render json: @establecimiento.errors, status: :unprocessable_entity }
+        #end
+        #puts json
+      end
+
+
+
+      #render json: json
     end
     #@establecimiento = Establecimiento.new(params[:establecimiento])
 
-    #respond_to do |format|
-      #if @establecimiento.save
-        #format.html { redirect_to @establecimiento, notice: 'Establecimiento was successfully created.' }
-        #format.json { render json: @establecimiento, status: :created, location: @establecimiento }
-      #else
-        #format.html { render action: "new" }
-        #format.json { render json: @establecimiento.errors, status: :unprocessable_entity }
-      #end
-    puts json
-    #end
+    #
   end
 
   # PUT /establecimientos/1
