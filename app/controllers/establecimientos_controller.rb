@@ -11,7 +11,6 @@ class EstablecimientosController < ApplicationController
   end
 
   def lista
-
     json=Validation.validateLista params
     auxEst=[]
     if(json == false)
@@ -21,7 +20,7 @@ class EstablecimientosController < ApplicationController
       establecimientos.each{|estab|
         dist=Operaciones.distancia(estab.latitud,estab.longitud,json['latitud'],json['longitud'])
         if(dist<=json['radio'])
-          if(!json['categoria'].equal?("ALL"))
+          if(json['categoria']!=nil)
             if(json['keyword'] != nil)
               if(estab.nombre.include?json['keyword'] && estab.categoria.equal?(json['categoria']))
                 auxEst<<estab
@@ -84,7 +83,7 @@ class EstablecimientosController < ApplicationController
     if(json == false)
       render json: {:eatsy_status => "error"}
     else
-      puts json
+      #puts json
       data=JSON.parse(json)
       establecimiento = Establecimiento.new(data)
       if establecimiento.save
@@ -97,7 +96,34 @@ class EstablecimientosController < ApplicationController
 
   # PUT /establecimientos/1
   # PUT /establecimientos/1.json
-  def update
+  def actualizar
+    #parametros = params
+    respuesta=Validation.validateUpdate params
+    parametros = JSON.parse(params[:actualizar])
+    #parametros = params[:actualizar]
+    if(respuesta==false)
+      render json: {:eatsy_status => "error"}
+    else
+      if(!parametros['calificacion'].blank?)
+        establecimiento = Establecimiento.find(parametros['id'])
+        #puts establecimiento
+        #parametros = parametros.to_json
+        promedio=(establecimiento.calificacion+parametros['calificacion'])/2
+        if establecimiento.update_attributes(:calificacion => promedio)
+          #    format.html { redirect_to @establecimiento, notice: 'Establecimiento was successfully updated.' }
+          render json: {:eatsy_status => "Actualizado"}
+          #    format.json { head :no_content }
+        else
+          #    format.html { render action: "edit" }
+          render json: {:eatsy_status => "error"}
+          #    format.json { render json: @establecimiento.errors, status: :unprocessable_entity }
+        end
+      end
+      #render json: {:eatsy_status => "error"}
+      #puts parametros
+      #render json: {:eatsy_status => "entra"}
+    end
+
     #@establecimiento = Establecimiento.find(params[:id])
 
     #respond_to do |format|
@@ -109,8 +135,8 @@ class EstablecimientosController < ApplicationController
     #    format.json { render json: @establecimiento.errors, status: :unprocessable_entity }
     #  end
     #end
-    casa= params
-    print casa
+    #casa= params
+    #print casa
   end
 
   # DELETE /establecimientos/1
