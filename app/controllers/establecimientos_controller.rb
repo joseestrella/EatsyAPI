@@ -2,41 +2,60 @@ class EstablecimientosController < ApplicationController
   # GET /establecimientos
   # GET /establecimientos.json
   def index
-    @establecimientos = Establecimiento.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @establecimientos }
-    end
-  end
-
-  def lista
     json=Validation.validateLista params
     auxEst=[]
+    auxComent=[]
     if(json == false)
       render json: {:eatsy_status => "error"}
-    else
-      establecimientos = Establecimiento.all
+    else                                           #return [izq, der, abajo, arriba]
+      paredes=Operaciones.paredes(json['latitud'],json['longitud'],json['radio'])
+      establecimientos = Establecimiento.where("longitud >= ? AND longitud <= ? AND latitud >= ? AND latitud <= ?",paredes[0],paredes[1],paredes[2],paredes[3])
+      puts establecimientos
       establecimientos.each{|estab|
+        auxComent=[]
         dist=Operaciones.distancia(estab.latitud,estab.longitud,json['latitud'],json['longitud'])
         if(dist<=json['radio'])
           if(json['categoria']!=nil)
             if(json['keyword'] != nil)
               if(estab.nombre.include?json['keyword'] && estab.categoria.equal?(json['categoria']))
-                auxEst<<estab
+                coment=Comentario.where("idEstablecimiento=?",estab.id)
+                aux={"comentarios"=>
+                  coment.map{ |c| aux2= {"coment"=>c['coment']}  }
+                }
+                auxComent<<estab
+                auxComent<<aux
+                auxEst<<auxComent
               end
             else
               if(estab.categoria == json['categoria'])
-                auxEst<<estab
+                coment=Comentario.where("idEstablecimiento=?",estab.id)
+                aux={"comentarios"=>
+                  coment.map{ |c| aux2= {"coment"=>c['coment']}  }
+                }
+                auxComent<<estab
+                auxComent<<aux
+                auxEst<<auxComent
               end
             end
           else
             if(json['keyword'] != nil)
               if(estab.nombre.include?json['keyword'])
-                auxEst<<estab
+                coment=Comentario.where("idEstablecimiento=?",estab.id)
+                aux={"comentarios"=>
+                  coment.map{ |c| aux2= {"coment"=>c['coment']}  }
+                }
+                auxComent<<estab
+                auxComent<<aux
+                auxEst<<auxComent
               end
             else
-              auxEst<<estab
+              coment=Comentario.where("idEstablecimiento=?",estab.id)
+              aux={"comentarios"=>
+                coment.map{ |c| aux2= {"coment"=>c['coment']}  }
+              }
+              auxComent<<estab
+              auxComent<<aux
+              auxEst<<auxComent
             end
           end
         end
@@ -45,6 +64,15 @@ class EstablecimientosController < ApplicationController
       render json:{
           :Establecimientos => perro
       }, :status => 200
+    end
+  end
+
+  def lista
+    @establecimientos = Establecimiento.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @establecimientos }
     end
   end
 
@@ -78,25 +106,25 @@ class EstablecimientosController < ApplicationController
 
   # POST /establecimientos
   # POST /establecimientos.json
-  def crear
+  def create
     json=Validation.validateCreate params
     if(json == false)
-      render json: {:eatsy_status => "error"}
+      render json: {:eatsy_status => "Error"}
     else
       #puts json
       data=JSON.parse(json)
       establecimiento = Establecimiento.new(data)
       if establecimiento.save
-        render json:{ :eatsy_status => "Guardado satisfactorio"}
+        render json:{ :eatsy_status => "Ok"}
       else
-        format.json { render json: establecimiento.errors, status: :unprocessable_entity }
+        render json:{ :eatsy_status => "Error"}
       end
     end
   end
 
   # PUT /establecimientos/1
   # PUT /establecimientos/1.json
-  def actualizar
+  def update
     #parametros = params
     respuesta=Validation.validateUpdate params
     parametros = JSON.parse(params[:actualizar])
@@ -105,38 +133,39 @@ class EstablecimientosController < ApplicationController
       render json: {:eatsy_status => "error"}
     else
       if(!parametros['calificacion'].blank?)
-        establecimiento = Establecimiento.find(parametros['id'])
-        #puts establecimiento
-        #parametros = parametros.to_json
-        promedio=(establecimiento.calificacion+parametros['calificacion'])/2
-        if establecimiento.update_attributes(:calificacion => promedio)
-          #    format.html { redirect_to @establecimiento, notice: 'Establecimiento was successfully updated.' }
-          render json: {:eatsy_status => "Actualizado"}
-          #    format.json { head :no_content }
+        #establecimiento = Establecimiento.where("id=?",parametros['idEstablecimiento'])
+        #band=false
+        begin
+          establecimiento=Establecimiento.find(parametros['idEstablecimiento'])
+        rescue ActiveRecord::RecordNotFound => e
+          establecimiento = nil
+        end
+        if(establecimiento!=nil)
+          promedio=(establecimiento.calificacion+parametros['calificacion'])/2
+          if establecimiento.update_attributes(:calificacion => promedio)
+            if(!parametros['comentario'].blank?)
+              comentario = Comentario.new(:idEstablecimiento => parametros['idEstablecimiento'],:coment => parametros['comentario'])
+              if !comentario.save
+                render json: {:eatsy_status => "error"}
+              end
+            end
+            render json: {:eatsy_status => "Actualizado"}
+          else
+            render json: {:eatsy_status => "error"}
+          end
         else
-          #    format.html { render action: "edit" }
+          render json: {:eatsy_status => "No hay"}
+        end
+      else
+        comentario = Comentario.new(:idEstablecimiento => parametros['id'],:coment => parametros['comentario'])
+        if comentario.save
+          render json: {:eatsy_status => "Actualizado"}
+        else
           render json: {:eatsy_status => "error"}
-          #    format.json { render json: @establecimiento.errors, status: :unprocessable_entity }
         end
       end
-      #render json: {:eatsy_status => "error"}
-      #puts parametros
-      #render json: {:eatsy_status => "entra"}
     end
 
-    #@establecimiento = Establecimiento.find(params[:id])
-
-    #respond_to do |format|
-    #  if @establecimiento.update_attributes(params[:establecimiento])
-    #    format.html { redirect_to @establecimiento, notice: 'Establecimiento was successfully updated.' }
-    #    format.json { head :no_content }
-    #  else
-    #    format.html { render action: "edit" }
-    #    format.json { render json: @establecimiento.errors, status: :unprocessable_entity }
-    #  end
-    #end
-    #casa= params
-    #print casa
   end
 
   # DELETE /establecimientos/1
