@@ -72,7 +72,7 @@ class EstablecimientosController < ApplicationController
     @establecimientos = Establecimiento.all
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html  index.html.erb
       format.json { render json: @establecimientos }
     end
   end
