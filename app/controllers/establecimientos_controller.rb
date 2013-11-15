@@ -5,6 +5,12 @@ class EstablecimientosController < ApplicationController
     json=Validation.validateLista params
     auxEst=[]
     auxComent=[]
+    @establecimientos = Establecimiento.all
+
+    respond_to do |format|
+      format.html  index.html.erb
+      #format.json { render json: @establecimientos }
+    end
     if(json == false)
       render json: {:eatsy_status => "error"}
     else                                           #return [izq, der, abajo, arriba]
@@ -73,7 +79,7 @@ class EstablecimientosController < ApplicationController
 
     respond_to do |format|
       format.html  index.html.erb
-      format.json { render json: @establecimientos }
+      #format.json { render json: @establecimientos }
     end
   end
 
