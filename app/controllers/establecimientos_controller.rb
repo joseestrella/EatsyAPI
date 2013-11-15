@@ -51,12 +51,12 @@ class EstablecimientosController < ApplicationController
                 auxEst<<auxComent
               end
             else
-              coment=Comentario.where("idEstablecimiento=?",estab.id)
-              aux={"comentarios"=>
-                coment.map{ |c| aux2= {"coment"=>c['coment']}  }
-              }
+              #coment=Comentario.where("idEstablecimiento=?",estab.id)
+              #aux={"comentarios"=>
+              #  coment.map{ |c| aux2= {"coment"=>c['coment']}  }
+              #}
               auxComent<<estab
-              auxComent<<aux
+              #auxComent<<aux
               auxEst<<auxComent
             end
           end
