@@ -67,45 +67,42 @@ class EstablecimientosController < ApplicationController
     end
   end
 
-  def lista
-    @establecimientos = Establecimiento.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @establecimientos }
-    end
-  end
+  #def lista
+  #  @establecimientos = Establecimiento.all
+  #
+  #  respond_to do |format|
+  #    format.html # index.html.erb
+  #    format.json { render json: @establecimientos }
+  #  end
+  #end
 
 
   # GET /establecimientos/1
   # GET /establecimientos/1.json
-  def show
-    @establecimiento = Establecimiento.find(params[:id])
+  #def show
+  #  @establecimiento = Establecimiento.find(params[:id])
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @establecimiento }
-    end
-  end
+  #  respond_to do |format|
+  #    format.html # show.html.erb
+  #    format.json { render json: @establecimiento }
+  #  end
+  #end
 
   # GET /establecimientos/new
   # GET /establecimientos/new.json
-  def new
-    @establecimiento = Establecimiento.new
+  #def new
+  #  @establecimiento = Establecimiento.new
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @establecimiento }
-    end
-  end
+  #  respond_to do |format|
+  #    format.html # new.html.erb
+  #    format.json { render json: @establecimiento }
+  #  end
+  #end
 
-  # GET /establecimientos/1/edit
-  def edit
-    @establecimiento = Establecimiento.find(params[:id])
-  end
+  #def edit
+  #  @establecimiento = Establecimiento.find(params[:id])
+  #end
 
-  # POST /establecimientos
-  # POST /establecimientos.json
   def create
     json=Validation.validateCreate params
     if(json == false)
@@ -122,8 +119,7 @@ class EstablecimientosController < ApplicationController
     end
   end
 
-  # PUT /establecimientos/1
-  # PUT /establecimientos/1.json
+
   def update
     #parametros = params
     respuesta=Validation.validateUpdate params
@@ -168,15 +164,13 @@ class EstablecimientosController < ApplicationController
 
   end
 
-  # DELETE /establecimientos/1
-  # DELETE /establecimientos/1.json
-  def destroy
-    @establecimiento = Establecimiento.find(params[:id])
-    @establecimiento.destroy
+  #def destroy
+    #@establecimiento = Establecimiento.find(params[:id])
+    #@establecimiento.destroy
 
-    respond_to do |format|
-      format.html { redirect_to establecimientos_url }
-      format.json { head :no_content }
-    end
-  end
+    #respond_to do |format|
+    #  format.html { redirect_to establecimientos_url }
+    #  format.json { head :no_content }
+    #end
+  #end
 end

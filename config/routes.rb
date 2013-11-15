@@ -3,8 +3,6 @@ EatsyAPI::Application.routes.draw do
   get 'clientes/ver'
   resources :clientes
 
-
-  get 'establecimientos/lista'
   post 'establecimientos/create'
   post 'establecimientos/update'
   resources :establecimientos

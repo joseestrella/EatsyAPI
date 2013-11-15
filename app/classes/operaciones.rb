@@ -22,10 +22,7 @@ class Operaciones
     der=(der*180)/(6378.137*Math::PI)
     abajo=(abajo*180)/(6378.137*Math::PI)
     arriba=(arriba*180)/(6378.137*Math::PI)
-    #puts izq.to_s
-    #puts der.to_s
-    ##puts abajo.to_s
-    #puts arriba.to_s
+
     return [izq, der, abajo, arriba]
   end
 end
