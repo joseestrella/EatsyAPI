@@ -116,7 +116,7 @@ class Validation
     if(json['api-key'] != "eatsy_key123")
       return false
     end
-    if(json['idEstablecimiento'].blank?)
+    if(json['idestablecimiento'].blank?)
       return false
     end
 

@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(:version => 20131112073320) do
   end
 
   create_table "comentarios", :force => true do |t|
-    t.integer "idEstablecimiento"
+    t.integer "idestablecimiento"
     t.string  "coment"
   end
 

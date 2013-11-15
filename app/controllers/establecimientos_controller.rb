@@ -5,14 +5,15 @@ class EstablecimientosController < ApplicationController
     json=Validation.validateLista params
     auxEst=[]
     auxComent=[]
-
     if(json == false)
       render json: {:eatsy_status => "error"}
-    else                                           #return [izq, der, abajo, arriba]
+    else
+      puts "entra qui"
+      #return [izq, der, abajo, arriba]
       paredes=Operaciones.paredes(json['latitud'],json['longitud'],json['radio'])
+      puts paredes
       establecimientos = Establecimiento.where("longitud >= ? AND longitud <= ? AND latitud >= ? AND latitud <= ?",paredes[0],paredes[1],paredes[2],paredes[3])
-      #puts establecimientos
-      #establecimientos=Establecimiento.all
+      puts establecimientos
       establecimientos.each{|estab|
         auxComent=[]
         dist=Operaciones.distancia(estab.latitud,estab.longitud,json['latitud'],json['longitud'])
@@ -20,7 +21,7 @@ class EstablecimientosController < ApplicationController
           if(json['categoria']!=nil)
             if(json['keyword'] != nil)
               if(estab.nombre.include?json['keyword'] && estab.categoria.equal?(json['categoria']))
-                coment=Comentario.where("idEstablecimiento=?",estab.id)
+                coment=Comentario.where("idestablecimiento=?",estab.id)
                 aux={"comentarios"=>
                   coment.map{ |c| aux2= {"coment"=>c['coment']}  }
                 }
@@ -30,7 +31,7 @@ class EstablecimientosController < ApplicationController
               end
             else
               if(estab.categoria == json['categoria'])
-                coment=Comentario.where("idEstablecimiento=?",estab.id)
+                coment=Comentario.where("idestablecimiento=?",estab.id)
                 aux={"comentarios"=>
                   coment.map{ |c| aux2= {"coment"=>c['coment']}  }
                 }
@@ -42,7 +43,7 @@ class EstablecimientosController < ApplicationController
           else
             if(json['keyword'] != nil)
               if(estab.nombre.include?json['keyword'])
-                coment=Comentario.where("idEstablecimiento=?",estab.id)
+                coment=Comentario.where("idestablecimiento=?",estab.id)
                 aux={"comentarios"=>
                   coment.map{ |c| aux2= {"coment"=>c['coment']}  }
                 }
@@ -51,12 +52,12 @@ class EstablecimientosController < ApplicationController
                 auxEst<<auxComent
               end
             else
-              #coment=Comentario.where("idEstablecimiento=?",estab.id)
-              #aux={"comentarios"=>
-              #  coment.map{ |c| aux2= {"coment"=>c['coment']}  }
-              #}
+              coment=Comentario.where("idestablecimiento=?",estab.id)
+              aux={"comentarios"=>
+                coment.map{ |c| aux2= {"coment"=>c['coment']}  }
+              }
               auxComent<<estab
-              #auxComent<<aux
+              auxComent<<aux
               auxEst<<auxComent
             end
           end
@@ -73,8 +74,8 @@ class EstablecimientosController < ApplicationController
     @establecimientos = Establecimiento.all
 
     respond_to do |format|
-      format.html  index.html.erb
-      #format.json { render json: @establecimientos }
+      format.html # index.html.erb
+      format.json { render json: @establecimientos }
     end
   end
 
@@ -132,13 +133,13 @@ class EstablecimientosController < ApplicationController
     parametros = JSON.parse(params[:actualizar])
     #parametros = params[:actualizar]
     if(respuesta==false)
-      render json: {:eatsy_status => "error"}
+      render json: {:eatsy_status => "error en false"}
     else
       if(!parametros['calificacion'].blank?)
         #establecimiento = Establecimiento.where("id=?",parametros['idEstablecimiento'])
         #band=false
         begin
-          establecimiento=Establecimiento.find(parametros['idEstablecimiento'])
+          establecimiento=Establecimiento.find(parametros['idestablecimiento'])
         rescue ActiveRecord::RecordNotFound => e
           establecimiento = nil
         end
@@ -146,24 +147,24 @@ class EstablecimientosController < ApplicationController
           promedio=(establecimiento.calificacion+parametros['calificacion'])/2
           if establecimiento.update_attributes(:calificacion => promedio)
             if(!parametros['comentario'].blank?)
-              comentario = Comentario.new(:idEstablecimiento => parametros['idEstablecimiento'],:coment => parametros['comentario'])
+              comentario = Comentario.new(:idestablecimiento => parametros['idestablecimiento'],:coment => parametros['comentario'])
               if !comentario.save
-                render json: {:eatsy_status => "error"}
+                render json: {:eatsy_status => "error crear comentario"}
               end
             end
             render json: {:eatsy_status => "Actualizado"}
           else
-            render json: {:eatsy_status => "error"}
+            render json: {:eatsy_status => "error actualizar"}
           end
         else
           render json: {:eatsy_status => "No hay"}
         end
       else
-        comentario = Comentario.new(:idEstablecimiento => parametros['id'],:coment => parametros['comentario'])
+        comentario = Comentario.new(:idestablecimiento => parametros['id'],:coment => parametros['comentario'])
         if comentario.save
           render json: {:eatsy_status => "Actualizado"}
         else
-          render json: {:eatsy_status => "error"}
+          render json: {:eatsy_status => "error crear comentario 2"}
         end
       end
     end
