@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="38e0af6d-2e4a-432e-9f5d-5de7efe84015" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/establecimientos_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/establecimientos_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/migrate/20131112073320_create_comentarios.rb" afterPath="$PROJECT_DIR$/db/migrate/20131112073320_create_comentarios.rb" />
     </list>
     <ignored path="EatsyAPI.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -11,8 +10,8 @@
     <file path="/routes.rb" changelist="38e0af6d-2e4a-432e-9f5d-5de7efe84015" time="1384493605135" ignored="false" />
     <file path="/establecimientos_controller.rb" changelist="38e0af6d-2e4a-432e-9f5d-5de7efe84015" time="1384493584174" ignored="false" />
     <file path="/operations.rb" changelist="38e0af6d-2e4a-432e-9f5d-5de7efe84015" time="1384114986242" ignored="false" />
-    <file path="$USER_HOME$/RubymineProjects/PruebasAPI/scryptPruebas.rb" changelist="38e0af6d-2e4a-432e-9f5d-5de7efe84015" time="1384492489921" ignored="false" />
-    <file path="/scryptPruebas.rb" changelist="38e0af6d-2e4a-432e-9f5d-5de7efe84015" time="1384492361710" ignored="false" />
+    <file path="$USER_HOME$/RubymineProjects/PruebasAPI/scryptPruebas.rb" changelist="38e0af6d-2e4a-432e-9f5d-5de7efe84015" time="1384495644947" ignored="false" />
+    <file path="/scryptPruebas.rb" changelist="38e0af6d-2e4a-432e-9f5d-5de7efe84015" time="1384494682487" ignored="false" />
     <file path="/validation.rb" changelist="38e0af6d-2e4a-432e-9f5d-5de7efe84015" time="1384473010135" ignored="false" />
     <file path="$USER_HOME$/RubymineProjects/PruebasAPI/establecimiento.rb" changelist="38e0af6d-2e4a-432e-9f5d-5de7efe84015" time="1384117844299" ignored="false" />
     <file path="$USER_HOME$/RubymineProjects/PruebasAPI/scryptUnEstablecimiento" changelist="38e0af6d-2e4a-432e-9f5d-5de7efe84015" time="1384117964607" ignored="false" />
@@ -39,6 +38,7 @@
     <file path="/operaciones.rb" changelist="38e0af6d-2e4a-432e-9f5d-5de7efe84015" time="1384318773788" ignored="false" />
     <file path="$USER_HOME$/RubymineProjects/PruebasAPI/perro.rb" changelist="38e0af6d-2e4a-432e-9f5d-5de7efe84015" time="1384314587829" ignored="false" />
     <file path="/perro.rb" changelist="38e0af6d-2e4a-432e-9f5d-5de7efe84015" time="1384314584111" ignored="false" />
+    <file path="/20131112073320_create_comentarios.rb" changelist="38e0af6d-2e4a-432e-9f5d-5de7efe84015" time="1384495882500" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,37 +63,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="establecimientos_controller.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="establecimientos_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/establecimientos_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="36" selection-start="889" selection-end="890" vertical-scroll-proportion="-4.04811">
+            <state line="36" column="84" selection-start="1638" selection-end="1638" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/establecimientos/index.html.erb">
+      <file leaf-file-name="20131112073320_create_comentarios.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/db/migrate/20131112073320_create_comentarios.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="8.884615">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="clientes_controller.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/clientes_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="66" column="0" selection-start="1332" selection-end="1332" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="validation.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/classes/validation.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="81" column="27" selection-start="1927" selection-end="1927" vertical-scroll-proportion="0.0">
+            <state line="3" column="20" selection-start="120" selection-end="120" vertical-scroll-proportion="0.15692307">
               <folding />
             </state>
           </provider>
@@ -140,7 +122,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/db/migrate/20131111181211_create_clientes.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20131111232909_clientes.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20131110200737_create_clientes.rb" />
         <option value="$PROJECT_DIR$/app/views/clientes/index.html.erb" />
@@ -156,6 +137,7 @@
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/app/controllers/establecimientos_controller.rb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
+        <option value="$PROJECT_DIR$/db/migrate/20131112073320_create_comentarios.rb" />
       </list>
     </option>
   </component>
@@ -214,6 +196,38 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="EatsyAPI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EatsyAPI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EatsyAPI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="db" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EatsyAPI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EatsyAPI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="db" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="migrate" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -655,16 +669,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/db/migrate/20131112073320_create_comentarios.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="12" selection-start="62" selection-end="62" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/comentario.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="23" selection-start="61" selection-end="61" vertical-scroll-proportion="0.0273752" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/script/rails">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="0" selection-start="274" selection-end="274" vertical-scroll-proportion="0.13980263" />
@@ -694,20 +698,6 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/classes/validation.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="81" column="27" selection-start="1927" selection-end="1927" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/clientes_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="0" selection-start="1332" selection-end="1332" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -718,20 +708,6 @@
     <entry file="file://$PROJECT_DIR$/config/database.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Gemfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="22" selection-start="237" selection-end="237" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20131110200736_create_establecimientos.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="49" selection-start="295" selection-end="295" vertical-scroll-proportion="0.55921054">
           <folding />
         </state>
       </provider>
@@ -750,9 +726,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/clientes_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="66" column="0" selection-start="1332" selection-end="1332" vertical-scroll-proportion="3.4523077">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/classes/validation.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="81" column="27" selection-start="1927" selection-end="1927" vertical-scroll-proportion="0.8301282">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gemfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="22" selection-start="237" selection-end="237" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20131110200737_create_clientes.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20131110200736_create_establecimientos.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="49" selection-start="295" selection-end="295" vertical-scroll-proportion="0.55921054">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/establecimientos_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="36" selection-start="889" selection-end="890" vertical-scroll-proportion="-4.04811">
+        <state line="36" column="84" selection-start="1638" selection-end="1638" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20131112073320_create_comentarios.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="20" selection-start="120" selection-end="120" vertical-scroll-proportion="0.15692307">
           <folding />
         </state>
       </provider>
