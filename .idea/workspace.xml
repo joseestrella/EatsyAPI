@@ -2,33 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="38e0af6d-2e4a-432e-9f5d-5de7efe84015" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/EatsyAPI.iml" afterPath="$PROJECT_DIR$/.idea/EatsyAPI.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/clientes_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/clientes_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/database.yml" afterPath="$PROJECT_DIR$/config/database.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/establecimientos_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/establecimientos_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/classes/operaciones.rb" afterPath="$PROJECT_DIR$/app/classes/operaciones.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/environments/production.rb" afterPath="$PROJECT_DIR$/config/environments/production.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/classes/validation.rb" afterPath="$PROJECT_DIR$/app/classes/validation.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="EatsyAPI.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="38e0af6d-2e4a-432e-9f5d-5de7efe84015" time="1384489898852" ignored="false" />
-    <file path="/routes.rb" changelist="38e0af6d-2e4a-432e-9f5d-5de7efe84015" time="1384473655333" ignored="false" />
-    <file path="/establecimientos_controller.rb" changelist="38e0af6d-2e4a-432e-9f5d-5de7efe84015" time="1384490136672" ignored="false" />
+    <file path="/routes.rb" changelist="38e0af6d-2e4a-432e-9f5d-5de7efe84015" time="1384490670052" ignored="false" />
+    <file path="/establecimientos_controller.rb" changelist="38e0af6d-2e4a-432e-9f5d-5de7efe84015" time="1384490931172" ignored="false" />
     <file path="/operations.rb" changelist="38e0af6d-2e4a-432e-9f5d-5de7efe84015" time="1384114986242" ignored="false" />
-    <file path="$USER_HOME$/RubymineProjects/PruebasAPI/scryptPruebas.rb" changelist="38e0af6d-2e4a-432e-9f5d-5de7efe84015" time="1384489986410" ignored="false" />
-    <file path="/scryptPruebas.rb" changelist="38e0af6d-2e4a-432e-9f5d-5de7efe84015" time="1384210421992" ignored="false" />
+    <file path="$USER_HOME$/RubymineProjects/PruebasAPI/scryptPruebas.rb" changelist="38e0af6d-2e4a-432e-9f5d-5de7efe84015" time="1384490862310" ignored="false" />
+    <file path="/scryptPruebas.rb" changelist="38e0af6d-2e4a-432e-9f5d-5de7efe84015" time="1384490860372" ignored="false" />
     <file path="/validation.rb" changelist="38e0af6d-2e4a-432e-9f5d-5de7efe84015" time="1384473010135" ignored="false" />
     <file path="$USER_HOME$/RubymineProjects/PruebasAPI/establecimiento.rb" changelist="38e0af6d-2e4a-432e-9f5d-5de7efe84015" time="1384117844299" ignored="false" />
     <file path="$USER_HOME$/RubymineProjects/PruebasAPI/scryptUnEstablecimiento" changelist="38e0af6d-2e4a-432e-9f5d-5de7efe84015" time="1384117964607" ignored="false" />
     <file path="$USER_HOME$/RubymineProjects/PruebasAPI/scryptActualizar" changelist="38e0af6d-2e4a-432e-9f5d-5de7efe84015" time="1384318623901" ignored="false" />
     <file path="/scryptActualizar" changelist="38e0af6d-2e4a-432e-9f5d-5de7efe84015" time="1384318588395" ignored="false" />
-    <file path="$USER_HOME$/RubymineProjects/PruebasAPI/scryptCrear" changelist="38e0af6d-2e4a-432e-9f5d-5de7efe84015" time="1384135139222" ignored="false" />
-    <file path="/scryptCrear" changelist="38e0af6d-2e4a-432e-9f5d-5de7efe84015" time="1384134649788" ignored="false" />
+    <file path="$USER_HOME$/RubymineProjects/PruebasAPI/scryptCrear" changelist="38e0af6d-2e4a-432e-9f5d-5de7efe84015" time="1384490561638" ignored="false" />
+    <file path="/scryptCrear" changelist="38e0af6d-2e4a-432e-9f5d-5de7efe84015" time="1384490475707" ignored="false" />
     <file path="/20131111171211_create_clientes.rb" changelist="38e0af6d-2e4a-432e-9f5d-5de7efe84015" time="1384211891883" ignored="false" />
     <file path="/application.html.erb" changelist="38e0af6d-2e4a-432e-9f5d-5de7efe84015" time="1384194681353" ignored="false" />
     <file path="$PROJECT_DIR$/../sistemas distribuidos/consultas" changelist="38e0af6d-2e4a-432e-9f5d-5de7efe84015" time="1384224601307" ignored="false" />
@@ -75,7 +66,7 @@
       <file leaf-file-name="establecimientos_controller.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/establecimientos_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="7" selection-start="600" selection-end="600" vertical-scroll-proportion="0.3653846">
+            <state line="13" column="42" selection-start="666" selection-end="666" vertical-scroll-proportion="0.7083333">
               <folding />
             </state>
           </provider>
@@ -102,7 +93,7 @@
       <file leaf-file-name="routes.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/routes.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="23" selection-start="85" selection-end="85" vertical-scroll-proportion="0.0">
+            <state line="7" column="3" selection-start="135" selection-end="135" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -153,8 +144,8 @@
         <option value="$PROJECT_DIR$/../consultas" />
         <option value="$PROJECT_DIR$/app/controllers/clientes_controller.rb" />
         <option value="$PROJECT_DIR$/app/classes/validation.rb" />
-        <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/Gemfile" />
+        <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/controllers/establecimientos_controller.rb" />
       </list>
     </option>
@@ -680,13 +671,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="23" selection-start="85" selection-end="85" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="22" selection-start="237" selection-end="237" vertical-scroll-proportion="0.0">
@@ -694,9 +678,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="3" selection-start="135" selection-end="135" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/establecimientos_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="7" selection-start="600" selection-end="600" vertical-scroll-proportion="0.3653846">
+        <state line="13" column="42" selection-start="666" selection-end="666" vertical-scroll-proportion="0.7083333">
           <folding />
         </state>
       </provider>

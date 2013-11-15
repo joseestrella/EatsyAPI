@@ -8,9 +8,10 @@ class EstablecimientosController < ApplicationController
     if(json == false)
       render json: {:eatsy_status => "error"}
     else                                           #return [izq, der, abajo, arriba]
-      paredes=Operaciones.paredes(json['latitud'],json['longitud'],json['radio'])
-      establecimientos = Establecimiento.where("longitud >= ? AND longitud <= ? AND latitud >= ? AND latitud <= ?",paredes[0],paredes[1],paredes[2],paredes[3])
+      #paredes=Operaciones.paredes(json['latitud'],json['longitud'],json['radio'])
+      #establecimientos = Establecimiento.where("longitud >= ? AND longitud <= ? AND latitud >= ? AND latitud <= ?",paredes[0],paredes[1],paredes[2],paredes[3])
       #puts establecimientos
+      establecimientos=Establecimiento.all
       establecimientos.each{|estab|
         auxComent=[]
         dist=Operaciones.distancia(estab.latitud,estab.longitud,json['latitud'],json['longitud'])
