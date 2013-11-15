@@ -81,12 +81,13 @@ class Validation
     rescue => ex
       return false
     end
+    print "\n +++ llego aca"
     if(json['api-key'] != "eatsy_key123")
       return false
     end
     if(json['nombre_usuario'].blank?)
       return false
-    elsif(Cliente.where(:nombre_usuario => json['nombre_usuario']))
+    elsif(Cliente.where(:nombre_usuario => json['nombre_usuario']).any?)
       return false #Verifica si no existe algun usuario con el mismo nombre de usuario
     end
     if(json['password'].blank?)
@@ -127,26 +128,7 @@ class Validation
     return true
   end
 
-  def self.validateUpdateCliente(params)
-    begin
-      json = JSON.parse(params[:actualizar])
-    rescue => ex
-      return false
-    end
-    if(json['api-key'] != "eatsy_key123")
-      return false
-    end
-    if(json['id'].blank?)
-      return false
-    end
 
-    if((json['comentario'].blank?)&&(json['calificacion'].blank?))
-      return false
-    end
-
-    #json2={"nombre" => json['nombre'],"descripcion" => json['descripcion'], "categoria" => json['categoria'], "latitud" => json['latitud'], "longitud" => json['longitud'], "direccion" => json['direccion'], "calificacion" => 0}
-    return true
-  end
   def self.validateVerUsuario(params)
     begin
       json = JSON.parse(params[:ver])

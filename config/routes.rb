@@ -1,8 +1,11 @@
 EatsyAPI::Application.routes.draw do
-  post 'clientes/crear'
+  post 'clientes/create'
+  post 'clientes/update'
   get 'clientes/ver'
   resources :clientes
 
+
+  get 'establecimientos/lista'
   post 'establecimientos/create'
   post 'establecimientos/update'
   resources :establecimientos

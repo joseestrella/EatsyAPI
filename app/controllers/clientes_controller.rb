@@ -2,21 +2,7 @@ class ClientesController < ApplicationController
   # GET /clientes
   # GET /clientes.json
 
-  def crear
-    json=Validation.validateCreateCliente params
-    if(json == false)
-      render json: {:eatsy_status => "error"}
-    else
-      #puts json
-      data=JSON.parse(json)
-      cliente = Cliente.new(data)
-      if cliente.save
-        render json:{ :eatsy_status => "Guardado satisfactorio"}
-      else
-        format.json { render json: cliente.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+
 
   def ver
     json=Validation.validateVerUsuario params
@@ -77,15 +63,18 @@ class ClientesController < ApplicationController
   # POST /clientes
   # POST /clientes.json
   def create
-    @cliente = Cliente.new(params[:cliente])
+    json=Validation.validateCreateCliente params
 
-    respond_to do |format|
-      if @cliente.save
-        format.html { redirect_to @cliente, notice: 'Cliente was successfully created.' }
-        format.json { render json: @cliente, status: :created, location: @cliente }
+    if(json == false)
+      render json: {:eatsy_status => "error"}
+    else
+      #puts json
+      data=JSON.parse(json)
+      cliente = Cliente.new(data)
+      if cliente.save
+        render json:{ :eatsy_status => "Ok"}
       else
-        format.html { render action: "new" }
-        format.json { render json: @cliente.errors, status: :unprocessable_entity }
+        render json:{ :eatsy_status => "Error"}
       end
     end
   end
